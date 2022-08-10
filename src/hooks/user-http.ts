@@ -14,7 +14,6 @@ const useHttp = () => {
     const sendRequest = async <T>(config: Config, dataLoaded: (data: any) => void) => {
         setLoading(true)
         setError(null)
-        console.log(config)
         try {
 
             const res = await fetch(config.url, {

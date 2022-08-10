@@ -94,7 +94,6 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
     }
     useEffect(() => {
         const uid = localStorage.getItem('uid')
-        console.log(uid)
         if (uid) {
             get_me(uid)
         } else {

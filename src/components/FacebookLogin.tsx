@@ -29,7 +29,6 @@ function FacebookLoginComponent() {
 
     useEffect(() => {
         if (meta.error && meta.error === 'User not found') {
-            console.log('hehe')
             sendRequest({
                 url: `${server_url}/user`, method: 'POST', body: JSON.stringify({ first_name: data.first_name, last_name: data.last_name, email: data.email, image: data.picture.data.url }), headers: {
                     'Content-Type': 'application/json'

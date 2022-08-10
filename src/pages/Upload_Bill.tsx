@@ -37,7 +37,6 @@ const Upload_Bill = () => {
     const uploadImage = () => {
         const newForm = new FormData()
         for (const img of imageFiles) {
-            console.log(img)
             newForm.append('image', img)
         }
         sendRequest({
