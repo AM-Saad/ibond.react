@@ -109,7 +109,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         get_store,
         currentStore,
         storeMeta,
-        url: 'http://localhost:5173',
+        url: 'https://ibondeg.netlify.app',
         server_url: 'http://localhost:8000'
     }
     return <UserContext.Provider value={userCtx}>
