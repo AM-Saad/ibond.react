@@ -1,0 +1,51 @@
+{
+    "home": {
+        "setup_your_store":"Setup loyalty program for your store in one click.",
+        "store_is_ready":"Your Store Is Ready",
+        "agree_to_terms":"by logging in you agree to the terms and privacy policy",
+        "greating":{
+            "date": "Today is {{date, DATE_HUGE}}",
+            "date_morning": "Good morning! ",
+            "date_afternoon": "Good afternoon!",
+            "date_evening": "Good evening! "
+        }
+    },
+    "upload_bill":{
+        "title":"Upload your bill",
+        "warning":"Please make sure that all invoice details appear clearly"
+    },
+    "confirm_spend":{
+        "you_dont_have_enough_points":"You don't have enough points at the moment",
+        "you_have":"You have: ",
+        "you_need":"You need: ",
+        "are_you_sure":"Are you sure you want to spend"
+    },
+    "thank_you":{
+        "title":"Thank you for being loyal customer 🤗",
+        "sub_title":"Keep going to redeem more points"
+    },
+    "show_seller":{
+        "title":"Show this to your seller",
+        "empty_history":"You didn't redeem any points yet.'"
+    },
+    "settings":{
+        "name_input":"Store Name",
+        "items_input":"Items to buy to get 1 for free",
+        "logo_input":"Your Logo"
+    },
+    "error":"Something went wrong",
+    "loading":"Loading...",
+    "buttons":{
+        "login":"Login",
+        "upload":"Upload",
+        "update":"Update",
+        "use_your_points":"Use your points",
+        "upload_to_redeem":"Upload bill to redeem '1' point",
+        "back":"Back",
+        "yes":"Yes",
+        "no":"No",
+        "get_qr":"Get Qr Code",
+        "settings":"Settings"
+
+    }
+}

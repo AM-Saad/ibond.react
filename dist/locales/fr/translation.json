@@ -1,0 +1,52 @@
+{
+    "home": {
+        "setup_your_store":"Configurez le programme de fidélité de votre magasin en un clic.",
+        "store_is_ready":"Votre magasin est prêt",
+        "agree_to_terms":"en vous connectant, vous acceptez les conditions et la politique de confidentialité",
+        "greating":{
+            "date": "Today is {{date, DATE_HUGE}}",
+            "date_morning": "Good morning! ",
+            "date_afternoon": "Good afternoon!",
+            "date_evening": "Good evening! "
+        }
+    },
+    "upload_bill":{
+        "title":"Téléchargez votre facture",
+        "warning":"Veuillez vous assurer que tous les détails de la facture apparaissent clairement"
+    },
+    "confirm_spend":{
+        "you_dont_have_enough_points":"Vous n'avez pas assez de points pour le moment",
+        "you_have":"Tu as: ",
+        "you_need":"Vous avez besoin: ",
+        "are_you_sure":"Êtes-vous sûr de vouloir dépenser"
+    },
+    "thank_you":{
+        "title":"Merci d'être un client fidèle 🤗",
+        "sub_title":"Continuez à échanger plus de points"
+    },
+    "show_seller":{
+        "title":"Montrez-le à votre vendeur",
+        "empty_history":"Vous n'avez pas encore échangé de points."
+    },
+    "settings":{
+        "name_input":"Nom du magasin",
+        "items_input":"Articles à acheter pour en obtenir 1 gratuitement",
+        "logo_input":"Votre logo"
+    },
+    "error":"Quelque chose s'est mal passé",
+    "loading":"Chargement...",
+
+    "buttons":{
+        "login":"Connexion",
+        "upload":"Télécharger",
+        "update":"Mise à jour",
+        "use_your_points":"Utilisez vos points",
+        "upload_to_redeem":"Télécharger la facture pour échanger '1' point",
+        "back":"Retour",
+        "yes":"Oui",
+        "no":"Non",
+        "get_qr":"Obtenir le code QR",
+        "settings":"Réglages"
+
+    }
+}

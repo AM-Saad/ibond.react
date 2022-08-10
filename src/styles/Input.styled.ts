@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledInput = styled.div`
+export const StyledInput: any = styled.div`
     display: grid;
     text-align: left;
     margin-bottom: 15px;
@@ -9,7 +9,7 @@ export const StyledInput = styled.div`
         margin: 5px 0;
         border-radius: 5px;
         /* border: 2px solid black; */
-        border: ${({ invalid }) => invalid ? '2px solid red' : '2px solid black'};
+        border: ${({ invalid }: any) => invalid ? '2px solid red' : '2px solid black'};
     }
     label{
         font-size: 19px;
