@@ -14,7 +14,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "outDir": "ts-built",
+    "rootDir": "src",
+    "sourceMap": true,
+
+    "jsx": "preserve",
     "typeRoots": ["node_modules/@types", "./src/types"],
       "baseUrl": ".",
       "paths": {
@@ -25,3 +29,4 @@
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
+
