@@ -1,4 +1,4 @@
-import { useContext, useMemo, Suspense } from 'react';
+import {  Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import PrivateRoute from './components/Common/Private_route';
 import Home from './pages/Home'
@@ -9,12 +9,10 @@ import Upload_Bill from './pages/Upload_Bill'
 import Thank_you from './pages/Thank_you'
 import Confirm_Spend from './pages/Confirm_Spend'
 import Show_Seller from './pages/Show_Seller'
-import UserContext from "./store/user-context";
 import ToggleLang from './components/Common/Toggle_Lang'
 import Logo from '../public/full-vertical.png'
 import NotFound from './pages/Not_Found'
 import dotenv from 'dotenv'
-import path from 'path'
 
 function App() {
 
