@@ -31,7 +31,8 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         setMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         try {
-            const response = await fetch(`http://ibond.abdelrahman-saad.cc/me/${id}`, {
+            console.log(import.meta.env)
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/me/${id}`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -65,7 +66,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         setStoreMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         try {
-            const response = await fetch(`http://ibond.abdelrahman-saad.cc/store/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/store/${id}`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -110,7 +111,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         currentStore,
         storeMeta,
         url: 'https://ibondeg.netlify.app',
-        server_url: 'http://ibond.abdelrahman-saad.cc'
+        server_url: import.meta.env.VITE_SERVER_URL
     }
     return <UserContext.Provider value={userCtx}>
         {props.children}

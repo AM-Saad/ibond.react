@@ -13,7 +13,11 @@ import UserContext from "./store/user-context";
 import ToggleLang from './components/Common/Toggle_Lang'
 import Logo from '../public/full-vertical.png'
 import NotFound from './pages/Not_Found'
+import dotenv from 'dotenv'
+import path from 'path'
+
 function App() {
+
   const privateRoutes = [
     { id: '1', element: Settings, path: '/settings' },
     { id: '2', element: QRPage, path: '/qr' },
@@ -33,7 +37,6 @@ function App() {
   return (
     <>
       <ToggleLang />
-
       <div className='wrapper'>
 
         <Suspense fallback={null}>
