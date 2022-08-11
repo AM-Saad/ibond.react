@@ -31,7 +31,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         setMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         try {
-            const response = await fetch(`http://localhost:8000/me/${id}`, {
+            const response = await fetch(`http://ibond.abdelrahman-saad.cc/me/${id}`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         setStoreMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         try {
-            const response = await fetch(`http://localhost:8000/store/${id}`, {
+            const response = await fetch(`http://ibond.abdelrahman-saad.cc/store/${id}`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
