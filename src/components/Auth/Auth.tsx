@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext,useMemo } from "react";
 import UserContext from "@/store/user-context";
 import useHttp from "@/hooks/user-http";
 import { useTranslation } from 'react-i18next'
@@ -18,6 +18,7 @@ const Auth = () => {
     const { error, loading, sendRequest } = useHttp()
     const { meta, setUserHandler, get_me, server_url } = useContext(UserContext)
     const { t } = useTranslation()
+    const isLoading = useMemo(() => meta.loading || loading, [meta, loading])
 
 
     const success = (response: Response) => {
@@ -51,9 +52,9 @@ const Auth = () => {
             <h2>{t('home.setup_your_store')}</h2>
             <p>{t('home.agree_to_terms')}</p>
             <div className="actions">
-            {meta.loading || loading && <p>{t('loading')}</p>}
+            {isLoading && <p>{t('loading')}</p>}
 
-                {!meta.loading && !loading &&
+                {!isLoading &&
                     <>
                         <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
                         <Google onSubmit={success} onFailure={onFailure} />
