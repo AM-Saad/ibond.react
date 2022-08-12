@@ -46,7 +46,7 @@ const Auth = () => {
     }, [meta.error])
     return (
         <>
-            <h1>IBond</h1>
+            <h1>On House</h1>
 
             <h2>{t('home.setup_your_store')}</h2>
             <p>{t('home.agree_to_terms')}</p>
