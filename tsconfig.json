@@ -18,7 +18,6 @@
     "rootDir": "src",
     "sourceMap": true,
     "jsx": "preserve",
-    "publicPath": "/",
     "typeRoots": ["node_modules/@types", "./src/types"],
       "baseUrl": "https://onhouse.netlify.app",
       "paths": {
