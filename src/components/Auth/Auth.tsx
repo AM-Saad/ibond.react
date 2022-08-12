@@ -49,7 +49,8 @@ const Auth = () => {
     return (
         <>
         <div className="actions">
-            <img src={Logo} alt="" />
+            <img className="logo" src={Logo} alt="Loyalty Program" />
+
             <h1>On House</h1>
         </div>
 
