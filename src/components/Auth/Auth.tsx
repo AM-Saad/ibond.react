@@ -51,9 +51,14 @@ const Auth = () => {
             <h2>{t('home.setup_your_store')}</h2>
             <p>{t('home.agree_to_terms')}</p>
             <div className="actions">
+            {meta.loading || loading && <p>{t('loading')}</p>}
 
-                <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
-                <Google onSubmit={success} onFailure={onFailure} />
+                {!meta.loading && !loading &&
+                    <>
+                        <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
+                        <Google onSubmit={success} onFailure={onFailure} />
+                    </>
+                }
             </div>
             {error && <p className="text-danger"> {error}</p>}
 

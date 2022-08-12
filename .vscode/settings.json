@@ -1,4 +1,5 @@
 {
+  "editor.experimental.stickyScroll.enabled": true,
     "workbench.colorCustomizations": {
       "activityBar.activeBackground": "#f9b788",
       "activityBar.activeBorder": "#c78f58",
@@ -15,6 +16,5 @@
       "titleBar.inactiveBackground": "#66339999",
       "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#fff"
   }
   
