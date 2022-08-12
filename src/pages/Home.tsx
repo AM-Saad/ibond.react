@@ -1,8 +1,6 @@
 import { useContext, useMemo } from 'react'
 import UserContext from "../store/user-context";
-
-import FacebookLoginComponent from '../components/FacebookLogin'
-import GoogleLogin from '../components/GoogleLogin'
+import Auth from '@/components/Auth/Auth';
 import MainContent from '../components/MainContent'
 const Home = () => {
     const { meta } = useContext(UserContext)
@@ -11,8 +9,7 @@ const Home = () => {
         <>
             {!meta.isLoggedIn &&
                 <>
-                    <FacebookLoginComponent />
-                    <GoogleLogin />
+                 <Auth />
                 </>
             }
             {meta.isLoggedIn && <MainContent />}

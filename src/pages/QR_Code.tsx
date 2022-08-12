@@ -14,7 +14,7 @@ const QR_Code = () => {
       {meta.loading && <p>{t('loading')}</p>}
       {meta.error && !meta.loading && <ErrorBox errors={[meta.error]} />}
       {!meta.loading && !meta.error && <div>
-        <p className={classes.print}>PRINT THIS SCREEN TO USE AS QR</p>
+        <p className={classes.print}>{t('print')}</p>
         <h1>{user?.store_name}</h1>
         <div>
           {user && <QRCode value={`${url}/${user?._id}`} />}
