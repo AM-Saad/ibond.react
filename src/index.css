@@ -106,13 +106,6 @@ button{
   box-shadow: 0 0 7px 3px #e3e3e3;
 }
 
-.toggle_lang {
-  display: flex;
-  margin: auto;
-  justify-content: end;
-  margin-bottom: 0.5rem;
-  width: 70%;
-}
 
 .toggle_lang select {
   width: 80px;

@@ -1,7 +1,7 @@
 
 
-var express = require('express');
-var history = require('connect-history-api-fallback');
+import express from 'express'
+import history from 'connect-history-api-fallback'
 var app = express();
 
 // Middleware for serving '/dist' directory

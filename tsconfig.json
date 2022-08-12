@@ -25,6 +25,7 @@
         "@/hooks/*": ["./src/hooks/*"],
         "@/store/*": ["./src/store/*"],
         "@/modals/*": ["./src/modals/*"],
+        "@/styles/*": ["./src/styles/*"],
       },
   },
   "include": ["src"],

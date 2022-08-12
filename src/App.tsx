@@ -1,20 +1,22 @@
-import {  Suspense } from 'react';
+import { Suspense, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom'
-import PrivateRoute from './components/Common/Private_route';
-import Home from './pages/Home'
-import QRPage from './pages/QR_Code'
-import Settings from './pages/Settings'
-import Loyalty from './pages/Loyalty'
-import Upload_Bill from './pages/Upload_Bill'
-import Thank_you from './pages/Thank_you'
-import Confirm_Spend from './pages/Confirm_Spend'
-import Show_Seller from './pages/Show_Seller'
-import ToggleLang from './components/Common/Toggle_Lang'
+import PrivateRoute from '@/components/Common/Private_route';
+import Home from '@/pages/Home'
+import QRPage from '@/pages/QR_Code'
+import Settings from '@/pages/Settings'
+import Loyalty from '@/pages/Loyalty'
+import Upload_Bill from '@/pages/Upload_Bill'
+import Thank_you from '@/pages/Thank_you'
+import Confirm_Spend from '@/pages/Confirm_Spend'
+import Show_Seller from '@/pages/Show_Seller'
+import ToggleLang from '@/components/Common/Toggle_Lang'
 import Logo from '../public/full-vertical.png'
-import NotFound from './pages/Not_Found'
-import dotenv from 'dotenv'
+import NotFound from '@/pages/Not_Found'
+import UserContext from "@/store/user-context";
+import { StyledButton } from '@/styles/Button.styled.js'
 
 function App() {
+  const { logout, meta } = useContext(UserContext)
 
   const privateRoutes = [
     { id: '1', element: Settings, path: '/settings' },
@@ -34,7 +36,10 @@ function App() {
 
   return (
     <>
-      <ToggleLang />
+      <div className="actions" style={{"justifyContent": 'end', margin:'1.5rem'}}>
+        <ToggleLang />
+        {meta.isLoggedIn && <button onClick={logout}>Logout</button>}
+      </div>
       <div className='wrapper'>
 
         <Suspense fallback={null}>
