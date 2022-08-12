@@ -17,7 +17,7 @@ const QR_Code = () => {
         <p className={classes.print}>{t('print')}</p>
         <h1>{user?.store_name}</h1>
         <div>
-          {user && <QRCode value={`${url}/${user?._id}`} />}
+          {user && <QRCode value={`${url}/upload/${user?._id}`} />}
         </div>
       </div>}
     </>
