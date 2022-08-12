@@ -19,7 +19,6 @@
     "sourceMap": true,
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types", "./src/types"],
-      "baseUrl": "https://onhouse.netlify.app",
       "paths": {
         "@/components/*": ["./src/components/*"],
         "@/pages/*": ["./src/pages/*"],
