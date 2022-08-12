@@ -5,7 +5,7 @@ import path, { resolve } from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "https://onhouse.netlify.app",
+  base:'/',
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, '/src') }],
   },
@@ -14,5 +14,5 @@ export default defineConfig({
       '/api': 'https://ibond.abdelrahman-saad.cc',
     },
   },
-
+  
 })
