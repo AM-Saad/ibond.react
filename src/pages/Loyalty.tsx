@@ -35,8 +35,8 @@ const Loylaty = () => {
                     <img className='store-logo' src={currentStore.image} alt="" />
                     <h1>{currentStore.store_name}</h1>
                     <div className="actions">
+                        <StyledButton> <Link to={`/confirm_spend/${currentStore?._id}`}>{t('buttons.use_your_points')}</Link></StyledButton>
                         <StyledButton><Link to={`/upload/${id}`}>{t('buttons.upload_to_redeem')}</Link></StyledButton>
-                        <StyledButton> <Link to={`/confirm_spend/${user?._id}`}>{t('buttons.use_your_points')}</Link></StyledButton>
                     </div>
                 </>
 

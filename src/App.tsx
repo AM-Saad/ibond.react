@@ -1,5 +1,5 @@
 import { Suspense, useContext } from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useHistory } from 'react-router-dom'
 import PrivateRoute from '@/components/Common/Private_route';
 import Home from '@/pages/Home'
 import QRPage from '@/pages/QR_Code'
@@ -13,11 +13,11 @@ import ToggleLang from '@/components/Common/Toggle_Lang'
 import Logo from '../public/full-vertical.png'
 import NotFound from '@/pages/Not_Found'
 import UserContext from "@/store/user-context";
-import { StyledButton } from '@/styles/Button.styled.js'
+import { useEffect } from 'react';
 
 function App() {
   const { logout, meta } = useContext(UserContext)
-
+  const history = useHistory()
   const privateRoutes = [
     { id: '1', element: Settings, path: '/settings' },
     { id: '2', element: QRPage, path: '/qr' },
@@ -34,9 +34,16 @@ function App() {
 
   ]
 
+  useEffect(() => {
+    const redirect = localStorage.getItem('redirect')
+    if (redirect && meta.isLoggedIn) {
+      history.push(redirect)
+      localStorage.removeItem('redirect')
+    }
+  }, [meta.isLoggedIn])
   return (
     <>
-      <div className="actions" style={{"justifyContent": 'end', margin:'1.5rem'}}>
+      <div className="actions" style={{ "justifyContent": 'end', margin: '1.5rem' }}>
         <ToggleLang />
         {meta.isLoggedIn && <button onClick={logout}>Logout</button>}
       </div>
