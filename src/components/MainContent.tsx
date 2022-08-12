@@ -5,6 +5,7 @@ import { StyledButton } from '@/styles/Button.styled.js'
 import ErrorBox from '@/components/Common/ErrorBox';
 import { useTranslation } from 'react-i18next'
 // import { DateTime } from 'luxon'
+import Logo from '../assets/onhouse.png'
 
 
 function MainContent() {
@@ -16,7 +17,10 @@ function MainContent() {
             {meta.error && !meta.loading && <ErrorBox errors={[meta.error]} />}
 
             {user && !meta.loading && <div>
-                <h1>On House</h1>
+                <div className="actions">
+                    <img className="logo" src={Logo} alt="Loyalty Program" />
+                    <h1>On House</h1>
+                </div>
 
                 <h2>Hi, {user?.first_name}</h2>
                 <h2>{t('home.store_is_ready')}</h2>

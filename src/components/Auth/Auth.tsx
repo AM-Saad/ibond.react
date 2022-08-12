@@ -4,6 +4,7 @@ import useHttp from "@/hooks/user-http";
 import { useTranslation } from 'react-i18next'
 import Google from "@/components/Auth/GoogleLogin";
 import FacebookLoginComponent from "@/components/Auth/FacebookLogin";
+import Logo from '../../assets/onhouse.png'
 
 interface Response {
     email: string;
@@ -47,7 +48,10 @@ const Auth = () => {
     }, [meta.error])
     return (
         <>
+        <div className="actions">
+            <img src={Logo} alt="" />
             <h1>On House</h1>
+        </div>
 
             <h2>{t('home.setup_your_store')}</h2>
             <p>{t('home.agree_to_terms')}</p>

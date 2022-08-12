@@ -9,7 +9,7 @@ const Home = () => {
         <>
             {!meta.isLoggedIn &&
                 <>
-                 <Auth />
+                    <Auth />
                 </>
             }
             {meta.isLoggedIn && <MainContent />}
