@@ -31,7 +31,6 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         setMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         try {
-            console.log(import.meta.env)
             const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/me/${id}`, {
                 headers: {
                     'Accept': 'application/json',

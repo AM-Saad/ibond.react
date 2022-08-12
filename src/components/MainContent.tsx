@@ -16,7 +16,8 @@ function MainContent() {
             {meta.error && !meta.loading && <ErrorBox errors={[meta.error]} />}
 
             {user && !meta.loading && <div>
-                <h1>IBond</h1>
+                <h1>On House</h1>
+
                 <h2>Hi, {user?.first_name}</h2>
                 <h2>{t('home.store_is_ready')}</h2>
                 <div className='actions'>
