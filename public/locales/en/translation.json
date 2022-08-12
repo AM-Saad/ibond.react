@@ -35,6 +35,8 @@
     },
     "error":"Something went wrong",
     "loading":"Loading...",
+    "print":"PRINT THIS SCREEN TO USE AS QR",
+
     "buttons":{
         "login":"Login",
         "upload":"Upload",

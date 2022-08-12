@@ -27,6 +27,7 @@ body {
 a {
   font-weight: 500;
   text-decoration: inherit;
+  color: #000;
 }
 
 #root {
@@ -50,7 +51,7 @@ body {
 .wrapper {
   width: 70%;
   margin: auto;
-  padding-top: 5rem;
+  padding-top: 3rem;
   text-align: center;
   /* height: 100%; */
   overflow-x: hidden
@@ -71,7 +72,11 @@ h2,
 h3 {
   color: #242424;
 }
+button{
+  border-radius: 5px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 2px 0px, rgba(0, 0, 0, 0.24) 0px 0px 1px 0px;
 
+}
 .text-danger {
   color: red;
 }

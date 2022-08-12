@@ -17,14 +17,16 @@
     "outDir": "ts-built",
     "rootDir": "src",
     "sourceMap": true,
-
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types", "./src/types"],
       "baseUrl": ".",
       "paths": {
-        "@components/*": ["src/components/*"],
-        "@services/*": ["src/services/*"],
-    }
+        "@/components/*": ["./src/components/*"],
+        "@/pages/*": ["./src/pages/*"],
+        "@/hooks/*": ["./src/hooks/*"],
+        "@/store/*": ["./src/store/*"],
+        "@/modals/*": ["./src/modals/*"],
+      },
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
