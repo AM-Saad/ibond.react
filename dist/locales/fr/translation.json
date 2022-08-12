@@ -35,7 +35,7 @@
     },
     "error":"Quelque chose s'est mal passé",
     "loading":"Chargement...",
-
+    "print":"IMPRIMER CET ÉCRAN POUR L'UTILISER COMME QR",
     "buttons":{
         "login":"Connexion",
         "upload":"Télécharger",

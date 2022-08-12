@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
 import UserContext from "@/store/user-context";
-import FacebookLogin from "react-facebook-login";
 import useHttp from "@/hooks/user-http";
 import { useTranslation } from 'react-i18next'
-import Google from "@/components/GoogleLogin";
-import FacebookLoginComponent from "@/components/FacebookLogin";
+import Google from "@/components/Auth/GoogleLogin";
+import FacebookLoginComponent from "@/components/Auth/FacebookLogin";
 
 interface Response {
     email: string;
