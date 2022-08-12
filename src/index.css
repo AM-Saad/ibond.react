@@ -91,6 +91,9 @@ button{
 .logo{
   height: 70px;
 }
+.logo-small{
+  height: 40px;
+}
 
 .actions {
   display: flex;

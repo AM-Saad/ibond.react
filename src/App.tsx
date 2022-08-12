@@ -10,10 +10,11 @@ import Thank_you from '@/pages/Thank_you'
 import Confirm_Spend from '@/pages/Confirm_Spend'
 import Show_Seller from '@/pages/Show_Seller'
 import ToggleLang from '@/components/Common/Toggle_Lang'
-import Logo from '../public/full-vertical.png'
+import AmsLogo from '../public/full-vertical.png'
 import NotFound from '@/pages/Not_Found'
 import UserContext from "@/store/user-context";
 import { useEffect } from 'react';
+import Logo from './assets/onhouse.png'
 
 function App() {
   const { logout, meta } = useContext(UserContext)
@@ -43,9 +44,14 @@ function App() {
   }, [meta.isLoggedIn])
   return (
     <>
-      <div className="actions" style={{ "justifyContent": 'end', margin: '1.5rem' }}>
-        <ToggleLang />
-        {meta.isLoggedIn && <button onClick={logout}>Logout</button>}
+      <div className="actions" style={{ "justifyContent": 'space-between', margin: '1.5rem' }}>
+        <a className='actions' href="/">
+          <img className="logo logo-small" src={Logo} alt="Loyalty Program" />
+        </a>
+        <div className='actions'>
+          <ToggleLang />
+          {meta.isLoggedIn && <button onClick={logout}>Logout</button>}
+        </div>
       </div>
       <div className='wrapper'>
 
@@ -68,7 +74,7 @@ function App() {
 
       </div>
       <div className='footer'>
-        <a target="_blank" href="https://www.amsaad.co/"> <img src={Logo} alt="Abdelrahman Saad" /> </a>
+        <a target="_blank" href="https://www.amsaad.co/"> <img src={AmsLogo} alt="Abdelrahman Saad" /> </a>
       </div>
     </>
 
