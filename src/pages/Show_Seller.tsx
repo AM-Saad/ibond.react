@@ -12,7 +12,7 @@ const Confirm_Spend = () => {
     const { id }: any = params
     const { t } = useTranslation()
 
-    const { server_url, user, meta, storeMeta, get_store, currentStore } = useContext(UserContext)
+    const { server_url, user,get_me, meta, storeMeta, get_store, currentStore } = useContext(UserContext)
 
     const storeHistory = useMemo(() => user?.loyalty.find(i => i.store_id === currentStore?._id), [currentStore]);
     const images = useMemo(() => storeHistory?.bills_images.map(i => `${server_url}${i}`), [storeHistory]);
@@ -31,7 +31,7 @@ const Confirm_Spend = () => {
     }
     useEffect(() => {
         get_store(id)
-
+        get_me()
     }, [])
     return (
         <>
