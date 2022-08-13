@@ -7,9 +7,11 @@ import Logo from '../assets/onhouse.png'
 import AmsLogo from '../../public/full-vertical.png'
 import ToggleLang from '../components/Common/Toggle_Lang'
 import { UserContextProvider } from '../store/user-context'
+import { appWithTranslation } from 'next-i18next';
+
 import '../index.css'
 
-export default function MyApp({ Component, pageProps }: any) {
+function MyApp({ Component, pageProps }: any) {
     const { logout, meta } = useContext(UserContext)
 
     // useEffect(() => {
@@ -56,3 +58,5 @@ export default function MyApp({ Component, pageProps }: any) {
         </>
     )
 }
+
+export default appWithTranslation(MyApp);
