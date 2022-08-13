@@ -32,7 +32,7 @@ const Confirm_Spend = () => {
     useEffect(() => {
         get_store(id)
 
-    }, [id])
+    }, [])
     return (
         <>
             {isLoading && <p>{t('loading')}</p>}
