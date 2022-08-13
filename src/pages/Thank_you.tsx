@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import UserContext from "../store/user-context";
 import { useParams } from 'react-router-dom'
-import { StyledButton } from '../styles/Button.styled.js'
+import { StyledButton } from '../styles/Button.styled'
 import { useTranslation } from 'react-i18next'
 
 const Thank_You = () => {

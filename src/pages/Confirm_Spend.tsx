@@ -2,7 +2,7 @@ import { useContext, useEffect, useMemo } from 'react'
 import UserContext from "../store/user-context";
 import { Link, useParams, useHistory } from 'react-router-dom'
 import useHttp from "../hooks/user-http";
-import { StyledButton } from '../styles/Button.styled.js'
+import { StyledButton } from '../styles/Button.styled'
 import ErrorBox from '../components/Common/ErrorBox';
 import { useTranslation } from 'react-i18next'
 import i18next from "i18next"

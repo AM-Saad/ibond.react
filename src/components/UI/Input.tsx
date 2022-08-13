@@ -2,7 +2,7 @@
 
 
 import { useField } from "formik";
-import { StyledInput } from '../../styles/Input.styled.js'
+import { StyledInput } from '../../styles/Input.styled'
 
 interface Props {
   label: string;

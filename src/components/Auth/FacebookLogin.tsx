@@ -1,15 +1,13 @@
 import React, { useState, useContext } from "react";
-import UserContext from "@/store/user-context";
+import UserContext from "../../store/user-context";
 import FacebookLogin from "react-facebook-login";
-import useHttp from "@/hooks/user-http";
-import { useTranslation } from 'react-i18next'
+// import useHttp from "@/hooks/user-http";
 
 interface Props {
     onSubmit: (data: any) => void;
     onFailure: (data: any) => void;
 }
 const FacebookLoginComponent: React.FC<Props> = ({ onSubmit, onFailure }) => {
-    const { meta, setUserHandler, get_me, server_url } = useContext(UserContext)
 
     const responseFacebook = (response: any) => {
         // Login failed

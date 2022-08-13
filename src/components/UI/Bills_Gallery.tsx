@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyledBills } from '../../styles/Bills.styled.js'
+import { StyledBills } from '../../styles/Bills.styled'
 import Modal from './Modal'
 import classes from '../../styles/Modal.module.css'
 

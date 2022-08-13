@@ -3,8 +3,8 @@ import useHttp from "../hooks/user-http";
 import { Link } from 'react-router-dom'
 import UserContext from "../store/user-context";
 import UploadImage from "../components/UI/Upload_image"
-import { StyledInput } from '../styles/Input.styled.js'
-import { StyledButton } from '../styles/Button.styled.js'
+import { StyledInput } from '../styles/Input.styled'
+import { StyledButton } from '../styles/Button.styled'
 import ErrorBox from '../components/Common/ErrorBox';
 import { useTranslation } from 'react-i18next'
 import Notification from '../components/Common/Notification'

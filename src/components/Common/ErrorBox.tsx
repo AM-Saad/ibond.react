@@ -1,8 +1,8 @@
 import React from 'react'
 import { useContext } from 'react'
 import UserContext from "../../store/user-context";
-import { StyleErrorBox } from '../../styles/ErrorBox.styled.js'
-import { StyledButton } from '../../styles/Button.styled.js'
+import { StyleErrorBox } from '../../styles/ErrorBox.styled'
+import { StyledButton } from '../../styles/Button.styled'
 import { useTranslation } from 'react-i18next'
 
 interface Props {

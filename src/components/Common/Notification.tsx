@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { StyledNotification } from '../../styles/Notification.styled.js'
+import { StyledNotification } from '../../styles/Notification.styled'
 
 interface Props {
     message: string | null,

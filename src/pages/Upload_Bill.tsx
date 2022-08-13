@@ -3,7 +3,7 @@ import { Link, useParams, useHistory } from 'react-router-dom'
 import UserContext from "../store/user-context";
 import useHttp from "../hooks/user-http";
 import UploadImage from "../components/UI/Upload_image"
-import { StyledButton } from '../styles/Button.styled.js'
+import { StyledButton } from '../styles/Button.styled'
 import ErrorBox from '../components/Common/ErrorBox';
 import { useTranslation } from 'react-i18next'
 

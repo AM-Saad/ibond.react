@@ -1,4 +1,4 @@
-import { gapi } from 'gapi-script';
+// import { gapi } from 'gapi-script';
 import React, { useEffect } from 'react'
 
 import { GoogleLogin } from 'react-google-login';
@@ -24,14 +24,14 @@ const Google: React.FC<Props> = ({ onSubmit, onFailure }) => {
 
 
     useEffect(() => {
-        function start() {
-            gapi.client.init({
-                clientId: "87231620963-rd7m2qmjk0nabct0npjeljs7guhvucn0.apps.googleusercontent.com",
-                scope: 'email',
-            });
-        }
+        // function start() {
+        //     gapi.client.init({
+        //         clientId: "87231620963-rd7m2qmjk0nabct0npjeljs7guhvucn0.apps.googleusercontent.com",
+        //         scope: 'email',
+        //     });
+        // }
 
-        gapi.load('client:auth2', start);
+        // gapi.load('client:auth2', start);
     }, []);
 
 

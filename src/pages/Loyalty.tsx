@@ -1,7 +1,7 @@
 import { useContext, useEffect, useMemo } from 'react'
 import UserContext from "../store/user-context";
 import { Link, useParams } from 'react-router-dom'
-import { StyledButton } from '../styles/Button.styled.js'
+import { StyledButton } from '../styles/Button.styled'
 import ErrorBox from '../components/Common/ErrorBox';
 import { useTranslation } from 'react-i18next'
 

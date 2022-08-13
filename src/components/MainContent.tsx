@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import UserContext from "@/store/user-context";
+import UserContext from "../store/user-context";
 import { Link } from 'react-router-dom'
-import { StyledButton } from '@/styles/Button.styled.js'
-import ErrorBox from '@/components/Common/ErrorBox';
+import { StyledButton } from '../styles/Button.styled'
+import ErrorBox from '../components/Common/ErrorBox';
 import { useTranslation } from 'react-i18next'
 // import { DateTime } from 'luxon'
 import Logo from '../assets/onhouse.png'

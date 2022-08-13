@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom'
 import ErrorBox from '../components/Common/ErrorBox';
 import BillsGallery from '../components/UI/Bills_Gallery';
 import moment from 'moment';
-import { StyledButton } from '../styles/Button.styled.js'
+import { StyledButton } from '../styles/Button.styled'
 import { useTranslation } from 'react-i18next'
 
 const Confirm_Spend = () => {
