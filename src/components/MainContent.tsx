@@ -18,8 +18,8 @@ function MainContent() {
 
             {user && !meta.loading && <div>
                 <div className="actions">
+                    <h1>Keep On</h1>
                     <img className="logo" src={Logo} alt="Loyalty Program" />
-                    <h1>On House</h1>
                 </div>
 
                 <h2>Hi, {user?.first_name}</h2>

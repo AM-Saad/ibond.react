@@ -109,7 +109,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         get_store,
         currentStore,
         storeMeta,
-        url: 'https://onhouse.netlify.app',
+        url: 'https://keepon.store',
         server_url: import.meta.env.VITE_SERVER_URL
     }
     return <UserContext.Provider value={userCtx}>

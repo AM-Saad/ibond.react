@@ -49,9 +49,8 @@ const Auth = () => {
     return (
         <>
         <div className="actions">
+            <h1>Keep On</h1>
             <img className="logo" src={Logo} alt="Loyalty Program" />
-
-            <h1>On House</h1>
         </div>
 
             <h2>{t('home.setup_your_store')}</h2>
