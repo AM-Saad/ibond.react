@@ -27,6 +27,7 @@ const Confirm_Spend = () => {
     }, [meta, storeMeta])
 
     const done = () => {
+        get_store(id)
         return history.push(`/show_seller/${currentStore?._id}`)
     }
 
