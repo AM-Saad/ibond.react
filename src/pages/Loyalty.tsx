@@ -32,6 +32,7 @@ const Loylaty = () => {
             {errors.length > 0 && !isLoading && <ErrorBox errors={errors} />}
             {errors.length === 0 && !isLoading && currentStore &&
                 <>
+                  
                     <img className='store-logo' src={currentStore.image} alt="" />
                     <h1>{currentStore.store_name}</h1>
                     <div className="actions">

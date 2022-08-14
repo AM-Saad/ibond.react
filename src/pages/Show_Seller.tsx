@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 import UserContext from "../store/user-context";
 import { useParams, Link, useHistory } from 'react-router-dom'
 import ErrorBox from '../components/Common/ErrorBox';
@@ -14,14 +14,13 @@ const Confirm_Spend = () => {
     const { t } = useTranslation()
     let history = useHistory()
     const { error: hookError, loading, sendRequest } = useHttp()
-
+    const uid = localStorage.getItem('uid')
 
     const { server_url, user, get_me, meta, storeMeta, get_store, currentStore } = useContext(UserContext)
-
+    const [askIfHeGotIt, setAskIfHeGotIt] = useState<boolean>(false)
     const storeObj = useMemo(() => user?.loyalty.find(i => i.store_id === currentStore?._id), [currentStore]);
     const images = useMemo(() => storeObj?.bills_images.map(i => `${server_url}${i}`), [storeObj]);
     const isLoading = useMemo(() => meta.loading || storeMeta.loading, [meta, storeMeta])
-    console.log(storeObj)
 
     const errors = useMemo(() => {
         let items = []
@@ -35,10 +34,12 @@ const Confirm_Spend = () => {
         return moment(datetime).format("YYYY-MM-DD HH:mm");
     }
     const reload = (data: any) => {
-        return history.push(`/loyalty/${currentStore?._id}`)
+        if (uid) get_me(uid)
+        window.location.reload();
+
     }
 
-    const getIt = () => {
+    const gotIt = () => {
         const historyId = storeObj?.history[storeObj.history.length - 1].id || 0
         sendRequest({
             url: `${server_url}/got_it/${currentStore?._id}?me=${user?._id}&&history=${historyId}`,
@@ -48,9 +49,14 @@ const Confirm_Spend = () => {
     }
 
     useEffect(() => {
+        const askIfHeGotIt = localStorage.getItem('askIfHeGotIt')
+        if (askIfHeGotIt) {
+            setAskIfHeGotIt(true)
+            localStorage.removeItem('askIfHeGotIt')
+        }
         get_store(id)
-        const uid = localStorage.getItem('uid')
         if (uid) get_me(uid)
+
     }, [])
     return (
         <>
@@ -69,12 +75,21 @@ const Confirm_Spend = () => {
                     <h2 className='show_seller'>{t('show_seller.title')}</h2>
                     <h3 >{convertDate(storeObj?.last_redeem_date!)}</h3>
                     {images && images.length > 0 && <BillsGallery images={images} />}
-                    <h3>{t('show_seller.got_it')}</h3>
-                    {hookError && <p className='text-danger'>{hookError}</p>}
-                    <div className='actions'>
-                        <StyledButton disabled={loading}> <Link to={`/loyalty/${currentStore?._id}`}>{t('buttons.back')}</Link></StyledButton>
-                        <StyledButton disabled={loading} onClick={getIt}>{t('buttons.yes')}</StyledButton>
-                    </div>
+                    {askIfHeGotIt &&
+                        <>
+                            <h3>{t('show_seller.got_it')}</h3>
+                            {hookError && <p className='text-danger'>{hookError}</p>}
+                            <div className='actions'>
+                                <StyledButton disabled={loading}> <Link to={`/loyalty/${currentStore?._id}`}>{t('buttons.back')}</Link></StyledButton>
+                                <StyledButton color='#b1ffb1' disabled={loading} onClick={gotIt}>{t('buttons.yes')}</StyledButton>
+                            </div>
+                        </>
+                    }
+                    {!askIfHeGotIt &&
+                        <div className='actions'>
+                            <StyledButton disabled={loading}> <Link to={`/loyalty/${currentStore?._id}`}>{t('buttons.back')}</Link></StyledButton>
+                        </div>
+                    }
                 </>
                 }
 

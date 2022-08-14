@@ -33,7 +33,7 @@ const BillsGallery: React.FC<Props> = ({ images }) => {
                     </div>
 
                 )}
-                {images.length > 4 && <div style={{ aspectRatio: '1' }}>
+                {images.length > 4 && <div style={{fontSize:'1rem', color:'#000', aspectRatio: '1' }}>
                     + {images.length - 4} More
                 </div>}
             </StyledBills>

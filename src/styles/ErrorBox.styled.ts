@@ -17,7 +17,10 @@ export const StyleErrorBox = styled.div`
     button{
         justify-self: end;
     }
-    p{
+    p.message{
         text-align: left;
+        background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
     }
 `

@@ -17,7 +17,7 @@ const ErrorBox: React.FC<Props> = ({ errors }) => {
         <StyleErrorBox>
             <h1>{t('error')}</h1>
             <div>
-                {errors.map((i,idx) => <p>{idx + 1}-  {i}</p>)}
+                {errors.map((i,idx) => <p className='message'>{idx + 1}-  {i}</p>)}
             </div>
             <p>Please try to login again</p>
 

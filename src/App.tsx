@@ -1,4 +1,4 @@
-import { Suspense, useContext } from 'react';
+import { Suspense, useContext, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom'
 import PrivateRoute from '@/components/Common/Private_route';
 import Home from '@/pages/Home'
@@ -13,11 +13,11 @@ import ToggleLang from '@/components/Common/Toggle_Lang'
 import AmsLogo from '../public/full-vertical.png'
 import NotFound from '@/pages/Not_Found'
 import UserContext from "@/store/user-context";
-import { useEffect } from 'react';
 import Logo from './assets/onhouse.png'
-
+import History from '@/components/History'
 function App() {
   const { logout, meta } = useContext(UserContext)
+
   const history = useHistory()
   const privateRoutes = [
     { id: '1', element: Settings, path: '/settings' },
@@ -49,6 +49,7 @@ function App() {
           <img className="logo logo-small" src={Logo} alt="Loyalty Program" />
         </a>
         <div className='actions'>
+          <History />
           <ToggleLang />
           {meta.isLoggedIn && <button onClick={logout}>Logout</button>}
         </div>

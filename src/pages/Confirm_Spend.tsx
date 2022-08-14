@@ -28,6 +28,7 @@ const Confirm_Spend = () => {
 
     const done = () => {
         get_store(id)
+        localStorage.setItem('askIfHeGotIt', "true")
         return history.push(`/show_seller/${currentStore?._id}`)
     }
 

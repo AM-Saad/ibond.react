@@ -11,7 +11,7 @@ export const StyledButton: any = styled.button`
     border: 1.5px solid #000;
     cursor: pointer;
     transition: transform 0.4s ease-out;
-    background-color: #fff;
+    background-color: ${({color}) => color ? color: '#fff'};
     height: 45px;
     min-width: 120px;
     text-align: center;

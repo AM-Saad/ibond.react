@@ -27,6 +27,7 @@
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
     "react-i18next": "^11.18.3",
+    "react-icons": "^4.4.0",
     "react-native-svg": "^12.4.3",
     "react-qr-code": "^2.0.7",
     "react-router-dom": "^5.3.1",

@@ -37,7 +37,10 @@
     "error":"Something went wrong",
     "loading":"Loading...",
     "print":"PRINT THIS SCREEN TO USE AS QR",
-
+    "history":"History",
+    "date":"Date",
+    "gotit":"Got It",
+    "mark_as_done":"Mark As Done",
     "buttons":{
         "login":"Login",
         "upload":"Upload",
