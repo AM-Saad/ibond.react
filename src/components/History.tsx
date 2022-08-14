@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next'
 import moment from 'moment';
 import { FaCheckCircle } from 'react-icons/fa';
 import { AiFillCloseCircle } from "react-icons/ai";
+import { MdHistory } from "react-icons/md";
+
 import i18next from "i18next"
 import useHttp from "../hooks/user-http";
 import { useHistory } from 'react-router-dom'
@@ -41,7 +43,7 @@ function History() {
 
             {storeObj && <div className="">
                 <p className="actions small-btn" onClick={() => setIsOpenModal(true)}>
-                    {t('history')}
+                    {t('history')}{itemsDidntGet! <= 0 && <MdHistory />}
                     {itemsDidntGet! > 0 && <span className="text-success items-available">
                         {itemsDidntGet}
                     </span>}
@@ -52,7 +54,7 @@ function History() {
                 <div>
                     <h2>{t('history')}</h2>
                     <ul>
-                        {storeObj?.history.map(i =>
+                        {storeObj?.history.reverse().map(i =>
                             <>
                                 <li key={i.id}>
                                     <p>{t('date')}: {moment(i.date).format("YYYY-MM-DD HH:mm")}</p>
