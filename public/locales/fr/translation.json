@@ -26,7 +26,9 @@
     },
     "show_seller":{
         "title":"Montrez-le à votre vendeur",
-        "empty_history":"Vous n'avez pas encore échangé de points."
+        "empty_history":"Vous n'avez pas encore échangé de points.",
+        "got_it":"As-tu compris?"
+
     },
     "settings":{
         "name_input":"Nom du magasin",

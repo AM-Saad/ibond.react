@@ -15,6 +15,7 @@ const Thank_You = () => {
     }, [])
     return (
         <>
+            <h3>{currentStore?.store_name}</h3>
             <h1>{t('thank_you.title')}</h1>
             <h2>{t('thank_you.sub_title')}</h2>
             <div className="actions">

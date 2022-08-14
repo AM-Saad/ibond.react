@@ -2,7 +2,7 @@
     "home": {
         "setup_your_store":"Setup loyalty program for your store in one click.",
         "store_is_ready":"Your Store Is Ready",
-        "agree_to_terms":"by logging in you agree to the terms and privacy policy",
+        "agree_to_terms":"by logging in you agree to the terms and privacy policy.",
         "greating":{
             "date": "Today is {{date, DATE_HUGE}}",
             "date_morning": "Good morning! ",
@@ -12,10 +12,10 @@
     },
     "upload_bill":{
         "title":"Upload your bill",
-        "warning":"Please make sure that all invoice details appear clearly"
+        "warning":"Please make sure that all invoice details appear clearly."
     },
     "confirm_spend":{
-        "you_dont_have_enough_points":"You don't have enough points at the moment",
+        "you_dont_have_enough_points":"You don't have enough points at the moment.",
         "you_have":"You have: ",
         "you_need":"You need: ",
         "are_you_sure":"Are you sure you want to spend"
@@ -26,7 +26,8 @@
     },
     "show_seller":{
         "title":"Show this to your seller",
-        "empty_history":"You didn't redeem any points yet.'"
+        "empty_history":"You didn't redeem any points yet.",
+        "got_it":"Did you get it?"
     },
     "settings":{
         "name_input":"Store Name",
