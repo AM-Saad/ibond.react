@@ -10,6 +10,7 @@ import Thank_you from '@/pages/Thank_you'
 import Confirm_Spend from '@/pages/Confirm_Spend'
 import Show_Seller from '@/pages/Show_Seller'
 import Privacy from '@/pages/Privacy'
+import Terms from '@/pages/Terms'
 import ToggleLang from '@/components/Common/Toggle_Lang'
 import AmsLogo from '../public/full-vertical.png'
 import NotFound from '@/pages/Not_Found'
@@ -34,6 +35,7 @@ function App() {
   const publicRoutes = [
     { id: '8', element: Home, path: "/" },
     { id: '9', element: Privacy, path: "/privacy" },
+    { id: '10', element: Terms, path: "/terms" },
 
   ]
 
