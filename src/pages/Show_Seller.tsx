@@ -41,9 +41,15 @@ const Confirm_Spend = () => {
 
     const gotIt = () => {
         const historyId = storeObj?.history[storeObj.history.length - 1].id || 0
+        const token = localStorage.getItem('uid')
+
         sendRequest({
             url: `${server_url}/got_it/${currentStore?._id}?me=${user?._id}&&history=${historyId}`,
-            method: 'Put'
+            method: 'Put',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: "Bearer " + token,
+            }
         }, reload)
 
     }

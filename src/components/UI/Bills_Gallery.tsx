@@ -34,7 +34,7 @@ const BillsGallery: React.FC<Props> = ({ images }) => {
 
                 )}
                 {images.length > 4 && <div style={{fontSize:'1rem', color:'#000', aspectRatio: '1' }}>
-                    + {images.length - 4} More
+                    + {images.length - firstFiveImages.length} More
                 </div>}
             </StyledBills>
         </>

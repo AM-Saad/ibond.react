@@ -15,7 +15,7 @@ const UserContext = React.createContext<UserContextInterface>({
     get_store: (id: string) => { },
     currentStore: null,
     storeMeta: { isLoggedIn: true, loading: false, error: null },
-    login: () => { },
+    login: (email: string) => { },
     logout: () => { }
 })
 
@@ -26,17 +26,43 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
     const [storeMeta, setStoreMeta] = useState<Meta>({ isLoggedIn: true, loading: false, error: null })
     const [currentStore, setCurrentStore] = useState<User | null>(null)
 
-    const login = async () =>{}
-
-    const get_me = async (id: string) => {
+    const login = async (email: string) => {
         setMeta((prevState) => { return { ...prevState, loading: true, error: null } })
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/me/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/login`,
+                {
+                    body: JSON.stringify({ email: email }),
+                    method: 'Post',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+
+                    }
+                })
+            const json = await response.json()
+            if (response.status === 200) {
+                setUserHandler(json.user)
+                localStorage.setItem('uid', json.token)
+            }
+
+            return setMeta((prevState) => { return { ...prevState, loading: false, error: json.message } })
+
+
+        } catch (error) {
+            return setMeta((prevState) => { return { ...prevState, loading: false, error: 'Something went wrong.' } })
+        }
+    }
+
+    const get_me = async (token: string) => {
+        setMeta((prevState) => { return { ...prevState, loading: true, error: null } })
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/me`, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    // Authorization: "Bearer " + token,
+                    Authorization: "Bearer " + token,
 
                 }
             })
@@ -50,13 +76,11 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
 
         } catch (error) {
             return setMeta((prevState) => { return { ...prevState, loading: false, error: 'Something went wrong.' } })
-
         }
     }
 
     const setUserHandler = (user: User) => {
         setUser(user)
-        localStorage.setItem('uid', user.email)
         setMeta((prevState) => { return { ...prevState, isLoggedIn: true, loading: false, error: null } })
 
     }
@@ -89,6 +113,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
     }
     const logout = () => {
         localStorage.removeItem('uid')
+        localStorage.removeItem('uem')
         setUser(null)
         setMeta((prev) => { return { ...prev, isLoggedIn: false, loading: false, error: null } })
 
