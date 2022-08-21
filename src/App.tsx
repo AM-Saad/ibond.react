@@ -1,6 +1,8 @@
 import { Suspense, useContext, useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom'
 import PrivateRoute from '@/components/Common/Private_route';
+import { Nav } from './components/Common/Nav';
+
 import Home from '@/pages/Home'
 import QRPage from '@/pages/QR_Code'
 import Settings from '@/pages/Settings'
@@ -11,15 +13,13 @@ import Confirm_Spend from '@/pages/Confirm_Spend'
 import Show_Seller from '@/pages/Show_Seller'
 import Privacy from '@/pages/Privacy'
 import Terms from '@/pages/Terms'
-import ToggleLang from '@/components/Common/Toggle_Lang'
+
 import AmsLogo from '../public/full-vertical.png'
 import NotFound from '@/pages/Not_Found'
 import UserContext from "@/store/user-context";
-import Logo from './assets/onhouse.png'
-import History from '@/components/History'
-function App() {
-  const { logout, meta } = useContext(UserContext)
 
+function App() {
+  const { meta } = useContext(UserContext)
   const history = useHistory()
   const privateRoutes = [
     { id: '1', element: Settings, path: '/settings' },
@@ -48,16 +48,7 @@ function App() {
   }, [meta.isLoggedIn])
   return (
     <>
-      <div className="actions" style={{ "justifyContent": 'space-between', margin: '1.5rem' }}>
-        <a className='actions' href="/">
-          <img className="logo logo-small" src={Logo} alt="Loyalty Program" />
-        </a>
-        <div className='actions'>
-          <History />
-          <ToggleLang />
-          {meta.isLoggedIn && <button onClick={logout}>Logout</button>}
-        </div>
-      </div>
+      <Nav />
       <div className='wrapper'>
 
         <Suspense fallback={null}>

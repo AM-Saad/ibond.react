@@ -2,7 +2,7 @@
     "home": {
         "setup_your_store":"Configurez le programme de fidélité de votre magasin en un clic.",
         "store_is_ready":"Votre magasin est prêt",
-        "agree_to_terms":"en vous connectant, vous acceptez les conditions et la politique de confidentialité",
+        "agree_to_terms":"en vous connectant, vous acceptez <a href='/terms' target='_blank'>les conditions</a> et  <a href='/privacy' target='_blank'> la politique de confidentialité</a>",
         "greating":{
             "date": "Today is {{date, DATE_HUGE}}",
             "date_morning": "Good morning! ",

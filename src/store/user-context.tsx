@@ -15,6 +15,7 @@ const UserContext = React.createContext<UserContextInterface>({
     get_store: (id: string) => { },
     currentStore: null,
     storeMeta: { isLoggedIn: true, loading: false, error: null },
+    login: () => { },
     logout: () => { }
 })
 
@@ -25,7 +26,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
     const [storeMeta, setStoreMeta] = useState<Meta>({ isLoggedIn: true, loading: false, error: null })
     const [currentStore, setCurrentStore] = useState<User | null>(null)
 
-
+    const login = async () =>{}
 
     const get_me = async (id: string) => {
         setMeta((prevState) => { return { ...prevState, loading: true, error: null } })
@@ -104,6 +105,7 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         user,
         meta,
         setUserHandler,
+        login,
         get_me,
         logout,
         get_store,

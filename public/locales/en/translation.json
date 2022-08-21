@@ -2,7 +2,7 @@
     "home": {
         "setup_your_store":"Setup loyalty program for your store in one click.",
         "store_is_ready":"Your Store Is Ready",
-        "agree_to_terms":"by logging in you agree to the terms and privacy policy.",
+        "agree_to_terms":"by logging in you agree to the <a href='/terms' target='_blank'>terms</a> and <a href='/privacy' target='_blank'>privacy</a> policy</a>.",
         "greating":{
             "date": "Today is {{date, DATE_HUGE}}",
             "date_morning": "Good morning! ",

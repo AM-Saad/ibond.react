@@ -11,5 +11,7 @@ interface User{
     image: string
     loyalty:Loyalty[]
     customers:Customers[]
+    isGoogle: boolean,
+    isFacebook: boolean
 }
 export default User

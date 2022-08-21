@@ -54,14 +54,14 @@ const Auth = () => {
         </div>
 
             <h2>{t('home.setup_your_store')}</h2>
-            <p>{t('home.agree_to_terms')}</p>
+            <p dangerouslySetInnerHTML={{__html: t('home.agree_to_terms')}}></p>
             <div className="actions">
             {isLoading && <p>{t('loading')}</p>}
 
                 {!isLoading &&
                     <>
                         <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
-                        <Google onSubmit={success} onFailure={onFailure} />
+                        {/* <Google onSubmit={success} onFailure={onFailure} /> */}
                     </>
                 }
             </div>

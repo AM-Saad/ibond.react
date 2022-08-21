@@ -2,7 +2,7 @@
     "home": {
         "setup_your_store":"قم بإعداد برنامج الولاء لمتجرك بنقرة واحدة.",
         "store_is_ready":"متجرك جاهز",
-        "agree_to_terms":"بتسجيل الدخول فإنك توافق على الشروط وسياسة الخصوصية",
+        "agree_to_terms":"بتسجيل الدخول فإنك توافق علي <a href='/terms'>الشروط</a> و <a href='/privacy'>سياسه الخصوصيه</a>",
         "greating":{
             "date": "Today is {{date, DATE_HUGE}}",
             "date_morning": "صباح الخير",

@@ -10,6 +10,7 @@ interface UserContext {
     setUserHandler: (user: User) => void
     get_me: (id: string) => void
     get_store: (id: string) => void
+    login: () => void
     logout: () => void
 }
 
