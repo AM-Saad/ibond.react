@@ -60,6 +60,8 @@ const Auth = () => {
                         {/* <Google onSubmit={success} onFailure={onFailure} /> */}
                     </>
                 }
+                {!meta.loading && !meta.error && <p className='text-danger'>{meta.error}</p>}
+
             </div>
             {error && <p className="text-danger"> {error}</p>}
 
