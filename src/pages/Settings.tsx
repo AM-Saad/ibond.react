@@ -41,6 +41,8 @@ const Settings = () => {
 
 
   const update = (data: any) => {
+    const token = localStorage.getItem('uid')
+
     const newForm = new FormData()
     for (const img of imageFiles) {
       newForm.append('image', img)
@@ -52,6 +54,9 @@ const Settings = () => {
       url: `${server_url}/update_account/${user?._id}`,
       method: 'PUT',
       body: newForm,
+      headers: {
+        Authorization: "Bearer " + token,
+    }
 
     }, show_notification)
   }
