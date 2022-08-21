@@ -33,11 +33,16 @@ const Confirm_Spend = () => {
     }
 
     const confirm_spend = () => {
+        const token = localStorage.getItem('uid')
+
         sendRequest({
             url: `${server_url}/confirm_spend/${currentStore?._id}?me=${user?._id}`,
             method: 'PUT',
             body: null,
-            headers: { 'Content-Type': 'application/json' }
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: "Bearer " + token,
+            }
         }, done)
 
     }

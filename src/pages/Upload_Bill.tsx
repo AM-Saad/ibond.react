@@ -16,7 +16,7 @@ const Upload_Bill = () => {
     let history = useHistory()
     const { t } = useTranslation()
 
-    const { error:hookError, loading, sendRequest } = useHttp()
+    const { error: hookError, loading, sendRequest } = useHttp()
 
     const errors = useMemo(() => {
         let items = []
@@ -39,9 +39,13 @@ const Upload_Bill = () => {
         for (const img of imageFiles) {
             newForm.append('image', img)
         }
+        const token = localStorage.getItem('uid')
         sendRequest({
             url: `${server_url}/upload_bill/${currentStore?._id}?me=${user?._id}`,
             method: 'PUT',
+            headers: {
+                Authorization: "Bearer " + token,
+            },
             body: newForm,
         }, reload)
 
@@ -51,8 +55,9 @@ const Upload_Bill = () => {
         if (id) {
             get_store(id)
         }
+        console.log(hookError)
 
-    }, [id])
+    }, [id, hookError])
     return (
         <>
             {storeMeta.loading && meta.loading && <p>{t('loading')}</p>}
@@ -60,7 +65,11 @@ const Upload_Bill = () => {
             {errors.length > 0 && <ErrorBox errors={errors} />}
 
             {!storeMeta.loading && errors.length === 0 && <div>
-                <h3>{currentStore?.store_name}</h3>
+                <div className="actions">
+                    <img className='store-logo small' src={currentStore?.image} alt="" />
+
+                    <h3>{currentStore?.store_name}</h3>
+                </div>
                 <h1>{t('upload_bill.title')}</h1>
                 <p className='text-gray'>{t('upload_bill.warning')}</p>
                 {hookError && <p className='text-danger'>{hookError}</p>}

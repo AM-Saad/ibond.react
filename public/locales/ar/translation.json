@@ -39,10 +39,10 @@
     "loading":"جاري التحميل...",
     "print":"اطبع الصفحه للاستخدام كا QR Code",
     "history":"السجل",
+    "empty_history":"السجل فاضى!",
     "date":"التاريخ",
     "gotit":"تم الاستلام",
     "mark_as_done":"حصلت عليه",
-
     "buttons":{
         "login":"تسجيل الدخول",
         "upload":"ارفع",
