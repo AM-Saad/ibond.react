@@ -20,7 +20,6 @@ html,
 body {
   width: 100%;
   position: relative;
-  overflow: hidden;
 
 }
 
@@ -43,7 +42,7 @@ body {
   background: rgb(131, 209, 194);
   background: linear-gradient(90deg, rgb(195 255 243) 0%, rgb(226 255 255) 22%, rgb(167 240 255) 100%);
   background: -webkit-linear-gradient(90deg, rgb(195 255 243) 0%, rgb(226 255 255) 22%, rgb(167 240 255) 100%);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 
 
 }
