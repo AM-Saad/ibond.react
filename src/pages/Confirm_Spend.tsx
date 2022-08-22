@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo } from 'react'
+import { useContext, useEffect, useMemo, useState } from 'react'
 import UserContext from "../store/user-context";
 import { Link, useParams, useHistory } from 'react-router-dom'
 import useHttp from "../hooks/user-http";
@@ -15,8 +15,7 @@ const Confirm_Spend = () => {
     const { t } = useTranslation()
 
     const { error: hookError, loading, sendRequest } = useHttp()
-
-    const points = useMemo(() => user?.loyalty.find(i => i.store_id === currentStore?._id)?.points || 0, [currentStore]);
+    const [points, setPoints] = useState<number>(0)
     const isLoading = useMemo(() => meta.loading || storeMeta.loading, [meta, storeMeta])
 
     const errors = useMemo(() => {
@@ -50,6 +49,13 @@ const Confirm_Spend = () => {
 
         get_store(id)
     }, [])
+    useEffect(() => {
+        if (user && currentStore) {
+            let totalpoints = user?.loyalty.find(i => i.store_id === currentStore?._id)?.points || 0
+            setPoints(totalpoints)
+        }
+
+    }, [user, currentStore])
     return (
         <>
             {isLoading && <p>{t('loading')}</p>}
