@@ -74,7 +74,7 @@ const Settings = () => {
       setInitialValues({ storename: user.store_name, items: user.to_buy_number })
     }
     if (error) {
-      setNotification({ message: error, type: 'danger' })
+      setNotification({ message: typeof error !== 'string' ? 'Something went wrong' : error , type: 'danger' })
     }
   }, [user, error])
 
