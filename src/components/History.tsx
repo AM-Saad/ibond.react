@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useState } from 'react'
+import React, { useMemo, useContext, useState, useEffect } from 'react'
 import UserContext from "@/store/user-context";
 import Modal from './UI/Modal'
 import { useTranslation } from 'react-i18next'
@@ -16,8 +16,8 @@ function History() {
     const { user, currentStore, server_url, meta } = useContext(UserContext)
     const [isOpenModal, setIsOpenModal] = useState(false)
 
-    const storeObj = useMemo(() => user?.loyalty.find(i => i.store_id === currentStore?._id), [currentStore]);
     const itemsDidntGet = useMemo(() => storeObj?.history.filter(i => i.done === false).length, [storeObj]);
+    const [storeObj, setStoreObj] = useState<any>()
 
     const { error: hookError, loading, sendRequest } = useHttp()
     let history = useHistory()
@@ -43,6 +43,13 @@ function History() {
         }, reload)
 
     }
+
+    useEffect(() => {
+        if (user && currentStore) {
+            let store = user?.loyalty.find(i => i.store_id === currentStore?._id)
+            store && setStoreObj(store)
+        }
+    }, [user, currentStore])
     return (
         <div style={{ direction: i18next.language === 'ar' ? 'rtl' : 'ltr' }}>
 
