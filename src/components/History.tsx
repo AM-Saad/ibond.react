@@ -16,7 +16,7 @@ function History() {
     const { user, currentStore, server_url, meta } = useContext(UserContext)
     const [isOpenModal, setIsOpenModal] = useState(false)
 
-    const itemsDidntGet = useMemo(() => storeObj?.history.filter(i => i.done === false).length, [storeObj]);
+    const [itemsDidntGet , setItemsDidntGet] = useState()
     const [storeObj, setStoreObj] = useState<any>()
 
     const { error: hookError, loading, sendRequest } = useHttp()
@@ -25,7 +25,7 @@ function History() {
     const { t } = useTranslation()
 
 
-    const reload = (data: any) => {
+    const reload = () => {
         window.location.reload();
 
     }
@@ -48,6 +48,8 @@ function History() {
         if (user && currentStore) {
             let store = user?.loyalty.find(i => i.store_id === currentStore?._id)
             store && setStoreObj(store)
+
+            setItemsDidntGet(storeObj?.history.filter((i:any) => i.done === false).length)
         }
     }, [user, currentStore])
     return (
@@ -73,7 +75,7 @@ function History() {
 
                     {storeObj && storeObj?.history.length > 0 &&
                         <ul>
-                            {storeObj?.history.reverse().map(i =>
+                            {storeObj?.history.reverse().map((i:any) =>
                                 <>
                                     <li key={i.id}>
                                         <p>{t('date')}: {moment(i.date).format("YYYY-MM-DD HH:mm")}</p>
