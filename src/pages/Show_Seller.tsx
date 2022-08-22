@@ -20,7 +20,6 @@ const Confirm_Spend = () => {
     const [images, setImages] = useState<any>()
     const { server_url, user, get_me, meta, storeMeta, get_store, currentStore } = useContext(UserContext)
     const [askIfHeGotIt, setAskIfHeGotIt] = useState<boolean>(false)
-    // const storeObj = useMemo(() => user?.loyalty.find(i => i.store_id === currentStore?._id), [currentStore]);
     const isLoading = useMemo(() => meta.loading || storeMeta.loading, [meta, storeMeta])
 
     const errors = useMemo(() => {
