@@ -77,8 +77,8 @@ const Confirm_Spend = () => {
                 {points >= currentStore?.to_buy_number && <div>
                     <h1>{t('confirm_spend.are_you_sure')} {currentStore?.to_buy_number} {`${i18next.language != 'ar' ? `point ${currentStore?.to_buy_number > 1 ? "(s)" : ''}` : ""} `}</h1>
                     <div className="actions">
-                        <StyledButton disabled={loading} onClick={confirm_spend}>{t('buttons.yes')}</StyledButton>
                         <StyledButton disabled={loading}> <Link to={`/loyalty/${currentStore?._id}`}>{t('buttons.no')}</Link></StyledButton>
+                        <StyledButton  color='#b1ffb1' disabled={loading} onClick={confirm_spend}>{t('buttons.yes')}</StyledButton>
                     </div>
                 </div>}
 
