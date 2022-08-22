@@ -2,7 +2,7 @@
     "home": {
         "setup_your_store":"قم بإعداد برنامج الولاء لمتجرك بنقرة واحدة.",
         "store_is_ready":"متجرك جاهز",
-        "agree_to_terms":"بتسجيل الدخول فإنك توافق على الشروط وسياسة الخصوصية",
+        "agree_to_terms":"بتسجيل الدخول فإنك توافق علي <a href='/terms'>الشروط</a> و <a href='/privacy'>سياسه الخصوصيه</a>",
         "greating":{
             "date": "Today is {{date, DATE_HUGE}}",
             "date_morning": "صباح الخير",
@@ -26,7 +26,9 @@
     },
     "show_seller":{
         "title":"إظهر هذه الصفحه للبائع",
-        "empty_history":"لم تقم باسترداد أي عناصر حتى الآن"
+        "empty_history":"لم تقم باسترداد أي عناصر حتى الآن",
+        "got_it":"هل حصلت عليها؟"
+
     },
     "settings":{
         "name_input":"اسم المتجر",
@@ -36,6 +38,11 @@
     "error":"حدث شي خطآ",
     "loading":"جاري التحميل...",
     "print":"اطبع الصفحه للاستخدام كا QR Code",
+    "history":"السجل",
+    "empty_history":"السجل فاضى!",
+    "date":"التاريخ",
+    "gotit":"تم الاستلام",
+    "mark_as_done":"حصلت عليه",
     "buttons":{
         "login":"تسجيل الدخول",
         "upload":"ارفع",
