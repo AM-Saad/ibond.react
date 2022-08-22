@@ -9,18 +9,16 @@ import { MdHistory } from "react-icons/md";
 
 import i18next from "i18next"
 import useHttp from "../hooks/user-http";
-import { useHistory } from 'react-router-dom'
 
 
 function History() {
     const { user, currentStore, server_url, meta } = useContext(UserContext)
     const [isOpenModal, setIsOpenModal] = useState(false)
 
-    const [itemsDidntGet , setItemsDidntGet] = useState()
+    const [itemsDidntGet, setItemsDidntGet] = useState()
     const [storeObj, setStoreObj] = useState<any>()
 
     const { error: hookError, loading, sendRequest } = useHttp()
-    let history = useHistory()
 
     const { t } = useTranslation()
 
@@ -45,12 +43,10 @@ function History() {
     }
 
     useEffect(() => {
-        if (user && currentStore) {
-            let store = user?.loyalty.find(i => i.store_id === currentStore?._id)
-            store && setStoreObj(store)
+        let store = user?.loyalty.find(i => i.store_id === currentStore?._id)
+        store && setStoreObj(store)
 
-            setItemsDidntGet(storeObj?.history.filter((i:any) => i.done === false).length)
-        }
+        setItemsDidntGet(storeObj?.history.filter((i: any) => i.done === false).length)
     }, [user, currentStore])
     return (
         <div style={{ direction: i18next.language === 'ar' ? 'rtl' : 'ltr' }}>
@@ -75,7 +71,7 @@ function History() {
 
                     {storeObj && storeObj?.history.length > 0 &&
                         <ul>
-                            {storeObj?.history.reverse().map((i:any) =>
+                            {storeObj?.history.reverse().map((i: any) =>
                                 <>
                                     <li key={i.id}>
                                         <p>{t('date')}: {moment(i.date).format("YYYY-MM-DD HH:mm")}</p>
