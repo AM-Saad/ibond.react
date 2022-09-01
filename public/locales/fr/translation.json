@@ -39,6 +39,8 @@
     "loading":"Chargement...",
     "print":"IMPRIMER CET ÉCRAN POUR L'UTILISER COMME QR",
     "history":"l'histoire",
+    "scan":"Numériser QR",
+
     "empty_history":"Rien ici encore",
 
     "date":"Date",
