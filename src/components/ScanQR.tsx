@@ -27,10 +27,8 @@ const ScanQR = (props: any) => {
 
                             onResult={(result: any, error: any) => {
                                 if (!!result) {
-                                    console.log(result)
-                                     history.replace(result)
-                                     setData(result)
-
+                                     history.replace(result.text)
+                                     setData(result.text)
                                 }
 
                                 if (!!error) {
