@@ -38,6 +38,8 @@
     "loading":"Loading...",
     "print":"PRINT THIS SCREEN TO USE AS QR",
     "history":"History",
+    "scan":"Scan QR",
+
     "empty_history":"Nothing here yet",
 
     "date":"Date",

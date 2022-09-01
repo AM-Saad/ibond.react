@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import Logo from '../../assets/onhouse.png'
 import History from '@/components/History'
+import ScanQR from '@/components/ScanQR'
 import ToggleLang from '@/components/Common/Toggle_Lang'
 import UserContext from "@/store/user-context";
 import { GoogleLogout } from 'react-google-login';
@@ -13,6 +14,7 @@ export const Nav:React.FC = () => {
                 <img className="logo logo-small" src={Logo} alt="Loyalty Program" />
             </a>
             <div className='actions'>
+                <ScanQR />
                 <History />
                 <ToggleLang />
                 {meta.isLoggedIn &&
