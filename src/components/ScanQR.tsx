@@ -26,7 +26,7 @@ const ScanQR = (props: any) => {
                             console.info(error);
                         }
                     }}
-                    constraints={{}}
+                    constraints={{ facingMode: 'environment' }}
                 />
                 <p>{data}</p>
             </Modal>
