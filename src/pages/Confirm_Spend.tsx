@@ -58,11 +58,11 @@ const Confirm_Spend = () => {
     }, [user, currentStore])
     return (
         <>
-            {isLoading && <p>{t('loading')}</p>}
+            {isLoading && <p className="loading">{t('loading')}</p>}
 
             {errors.length > 0 && <ErrorBox errors={errors} />}
             {hookError && <p className='text-danger'>{hookError}</p>}
-            {!isLoading && errors.length === 0 && currentStore && user && <div>
+            {!isLoading && errors.length === 0 && currentStore && user && <div className='text-center'>
                 {points < currentStore?.to_buy_number && <div>
                     <h1>{t('confirm_spend.you_dont_have_enough_points')}</h1>
                     <h2>{t('confirm_spend.you_have')} {points}</h2>

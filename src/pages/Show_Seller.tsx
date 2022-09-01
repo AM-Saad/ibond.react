@@ -74,9 +74,9 @@ const Confirm_Spend = () => {
     }, [user, currentStore])
     return (
         <>
-            {isLoading && <p>{t('loading')}</p>}
+            {isLoading && <p className="loading">{t('loading')}</p>}
             {errors.length > 0 && <ErrorBox errors={errors} />}
-            {currentStore && user && <div>
+            {currentStore && user && <div className="text-center">
                 <h1>{currentStore.store_name}</h1>
 
                 {!storeObj?.last_redeem_date && <>

@@ -15,10 +15,13 @@ const Thank_You = () => {
     }, [])
     return (
         <>
-            <h3>{currentStore?.store_name}</h3>
+            <div className="actions" style={{justifyContent: 'start'}}>
+                <img className='store-logo small' src={currentStore?.image} alt="" />
+                <h3>{currentStore?.store_name}</h3>
+            </div>
             <h1>{t('thank_you.title')}</h1>
             <h2>{t('thank_you.sub_title')}</h2>
-            <div className="actions">
+            <div className="">
                 <StyledButton> <a href={`/confirm_spend/${currentStore?._id}`}>{t('buttons.use_your_points')}</a></StyledButton>
             </div>
         </>

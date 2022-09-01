@@ -80,7 +80,7 @@ const Settings = () => {
 
   return (
     <>
-      {meta.loading && <p>{t('loading')}</p>}
+      {meta.loading && <p className="loading">{t('loading')}</p>}
       {!meta.loading && meta.error && <ErrorBox errors={[meta.error]} />}
       {!meta.loading && !meta.error && user &&
 

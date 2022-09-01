@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import UserContext from "@/store/user-context";
 import Modal from './UI/Modal'
 import { useTranslation } from 'react-i18next'
@@ -39,11 +39,10 @@ function History() {
                 Authorization: "Bearer " + token,
             }
         }, reload)
-
     }
-
     useEffect(() => {
         let store = user?.loyalty.find(i => i.store_id === currentStore?._id)
+        console.log(user)
         store && setStoreObj(store)
 
         setItemsDidntGet(storeObj?.history.filter((i: any) => i.done === false).length)
@@ -51,7 +50,7 @@ function History() {
     return (
         <div style={{ direction: i18next.language === 'ar' ? 'rtl' : 'ltr' }}>
 
-
+        
             {storeObj && <div className="">
                 <p className="actions small-btn" onClick={() => setIsOpenModal(true)}>
                     {t('history')}{itemsDidntGet! <= 0 && <MdHistory />}

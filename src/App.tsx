@@ -1,4 +1,6 @@
 import { Suspense, useContext, useEffect } from 'react';
+import i18next from "i18next"
+
 import { Route, Switch, useHistory } from 'react-router-dom'
 import PrivateRoute from '@/components/Common/Private_route';
 import { Nav } from './components/Common/Nav';
@@ -49,7 +51,7 @@ function App() {
   return (
     <>
       <Nav />
-      <div className='wrapper'>
+      <div className='wrapper' style={{ direction: i18next.language === 'ar' ? 'rtl' : 'ltr' }}>
 
         <Suspense fallback={null}>
 
