@@ -53,7 +53,7 @@ const Auth = () => {
             <p className="text-center" dangerouslySetInnerHTML={{ __html: t('home.agree_to_terms') }}></p>
             <div className="actions">
                 {isLoading && <p className="loading">{t('loading')}</p>}
-                {requiredAuth && <p className="loading text-warningr">{t('required_auth')} </p>}
+                {requiredAuth && <p className="loading text-warning">{t('required_auth')} </p>}
                 {!isLoading &&
                     <>
                         <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
