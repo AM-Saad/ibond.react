@@ -27,7 +27,7 @@ const ScanQR = (props: any) => {
 
                             onResult={(result: any, error: any) => {
                                 if (!!result) {
-                                     history.replace(result.text)
+                                     window.location.href = result.text
                                      setData(result.text)
                                 }
 
