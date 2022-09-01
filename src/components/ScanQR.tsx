@@ -26,7 +26,7 @@ const ScanQR = (props: any) => {
                             console.info(error);
                         }
                     }}
-                    style={{ width: '100%' }}
+                    constraints={{}}
                 />
                 <p>{data}</p>
             </Modal>
