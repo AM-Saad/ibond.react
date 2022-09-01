@@ -40,6 +40,7 @@
     "print":"IMPRIMER CET ÉCRAN POUR L'UTILISER COMME QR",
     "history":"l'histoire",
     "scan":"Numériser QR",
+    "required_auth":"Vous devez être connecté pour continuer",
 
     "empty_history":"Rien ici encore",
 

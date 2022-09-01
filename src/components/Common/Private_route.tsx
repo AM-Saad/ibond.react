@@ -5,10 +5,11 @@ import { Route, Redirect, useLocation } from 'react-router-dom'
 
 const PrivateRoute: React.FC<any> = ({ children, ...props }) => {
     const location = useLocation()
-    const { meta } = useContext(UserContext);
+    const { meta, loginRequired } = useContext(UserContext);
     return <Route {...props}
         render={_ => {
             if (!meta.isLoggedIn) {
+                loginRequired()
                 localStorage.setItem('redirect', location.pathname)
                 return <Redirect to='/' />
             }

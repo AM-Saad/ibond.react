@@ -12,6 +12,8 @@ interface UserContext {
     get_store: (id: string) => void
     login: (email: string) => void
     logout: () => void
+    requiredAuth: boolean
+    loginRequired: () => void
 }
 
 
