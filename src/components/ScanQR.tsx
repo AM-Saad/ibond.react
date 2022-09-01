@@ -7,9 +7,9 @@ import { useHistory } from 'react-router-dom'
 
 const ScanQR = (props: any) => {
     const [isOpenModal, setIsOpenModal] = useState(false)
+    const [data, setData] = useState("no")
     const { t } = useTranslation()
     const history = useHistory()
-
 
 
     return (
@@ -27,7 +27,8 @@ const ScanQR = (props: any) => {
 
                             onResult={(result: any, error: any) => {
                                 if (!!result) {
-                                    return history.replace(result)
+                                     history.replace(result)
+                                     setData(result)
 
                                 }
 
@@ -37,6 +38,8 @@ const ScanQR = (props: any) => {
                             }}
                             constraints={{ facingMode: 'environment' }}
                         />
+                            <p>{data}</p>
+
                     </div>
 
                 }
