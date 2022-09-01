@@ -7,9 +7,7 @@ export const StyleErrorBox = styled.div`
     display: grid;
     justify-items: center;
     div{
-        background: #ec8e8e;
-        padding: 0px 13px;
-        border: 1px solid red;
+ 
         width: 95%;
         margin: auto;
         border-radius:5px
@@ -22,5 +20,6 @@ export const StyleErrorBox = styled.div`
         background: #fff;
     padding: 1rem;
     border-radius: 5px;
+    border: 1px solid #ff9292;
     }
 `

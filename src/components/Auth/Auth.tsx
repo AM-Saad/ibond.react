@@ -52,7 +52,7 @@ const Auth = () => {
             <h2>{t('home.setup_your_store')}</h2>
             <p dangerouslySetInnerHTML={{ __html: t('home.agree_to_terms') }}></p>
             <div className="actions">
-                {isLoading && <p>{t('loading')}</p>}
+                {isLoading && <p className="loading">{t('loading')}</p>}
 
                 {!isLoading &&
                     <>

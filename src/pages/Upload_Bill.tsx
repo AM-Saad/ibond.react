@@ -60,7 +60,7 @@ const Upload_Bill = () => {
     }, [id, hookError])
     return (
         <>
-            {storeMeta.loading && meta.loading && <p>{t('loading')}</p>}
+            {storeMeta.loading && meta.loading && <p className="loading">{t('loading')}</p>}
 
             {errors.length > 0 && <ErrorBox errors={errors} />}
 
@@ -70,8 +70,8 @@ const Upload_Bill = () => {
 
                     <h3>{currentStore?.store_name}</h3>
                 </div>
-                <h1>{t('upload_bill.title')}</h1>
-                <p className='text-gray'>{t('upload_bill.warning')}</p>
+                <h1 className='text-center'>{t('upload_bill.title')}</h1>
+                <p className='text-gray text-center'>{t('upload_bill.warning')}</p>
                 {hookError && <p className='text-danger'>{hookError}</p>}
                 <UploadImage cleanInputValues={cleanInputValues} onSelectImage={imageSelectHandler} alt="Your Bill" />
                 <div className="actions">

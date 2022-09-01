@@ -10,17 +10,17 @@ const QR_Code = () => {
   const { t } = useTranslation()
 
   return (
-    <>
-      {meta.loading && <p>{t('loading')}</p>}
+    <div>
+      {meta.loading && <p className="loading">{t('loading')}</p>}
       {meta.error && !meta.loading && <ErrorBox errors={[meta.error]} />}
-      {!meta.loading && !meta.error && <div>
+      {!meta.loading && !meta.error && <div style={{ textAlign: 'center' }}>
         <p className={classes.print}>{t('print')}</p>
         <h1>{user?.store_name}</h1>
         <div>
           {user && <QRCode value={`${url}/upload/${user?._id}`} />}
         </div>
       </div>}
-    </>
+    </div>
   )
 }
 

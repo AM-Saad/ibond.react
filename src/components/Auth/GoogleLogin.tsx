@@ -41,7 +41,7 @@ const Google: React.FC<Props> = ({ onSubmit, onFailure }) => {
                 clientId="87231620963-rd7m2qmjk0nabct0npjeljs7guhvucn0.apps.googleusercontent.com"
                 onSuccess={onSuccess}
                 onFailure={onFailure}
-                style={{ fontSize: '21px', padding: '.5rem' }}
+                className="google-login"
             />
         </>
     )

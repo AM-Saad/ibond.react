@@ -28,10 +28,10 @@ const Loylaty = () => {
     }, [id])
     return (
         <>
-            {isLoading && <p>{t('loading')}</p>}
+            {isLoading && <p className="loading">{t('loading')}</p>}
             {errors.length > 0 && !isLoading && <ErrorBox errors={errors} />}
             {errors.length === 0 && !isLoading && currentStore &&
-                <>
+                <div className='text-center'>
                   
                     <img className='store-logo' src={currentStore.image} alt="" />
                     <h1>{currentStore.store_name}</h1>
@@ -39,7 +39,7 @@ const Loylaty = () => {
                         <StyledButton> <Link to={`/confirm_spend/${currentStore?._id}`}>{t('buttons.use_your_points')}</Link></StyledButton>
                         <StyledButton><Link to={`/upload/${id}`}>{t('buttons.upload_to_redeem')}</Link></StyledButton>
                     </div>
-                </>
+                </div>
 
             }
 
