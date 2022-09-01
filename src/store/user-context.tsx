@@ -16,12 +16,15 @@ const UserContext = React.createContext<UserContextInterface>({
     currentStore: null,
     storeMeta: { isLoggedIn: true, loading: false, error: null },
     login: (email: string) => { },
+    requiredAuth: false,
+    loginRequired: () => { },
     logout: () => { }
 })
 
 
 export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (props) => {
     const [user, setUser] = useState<User | null>(null)
+    const [requiredAuth, setRequiredAuth] = useState<boolean>(false)
     const [meta, setMeta] = useState<Meta>({ isLoggedIn: true, loading: false, error: null })
     const [storeMeta, setStoreMeta] = useState<Meta>({ isLoggedIn: true, loading: false, error: null })
     const [currentStore, setCurrentStore] = useState<User | null>(null)
@@ -116,7 +119,9 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         localStorage.removeItem('uem')
         setUser(null)
         setMeta((prev) => { return { ...prev, isLoggedIn: false, loading: false, error: null } })
-
+    }
+    const loginRequired = () => {
+        setRequiredAuth(true)
     }
     useEffect(() => {
         const uid = localStorage.getItem('uid')
@@ -131,6 +136,8 @@ export const UserContextProvider: React.FC<{ children: React.ReactNode }> = (pro
         meta,
         setUserHandler,
         login,
+        loginRequired,
+        requiredAuth,
         get_me,
         logout,
         get_store,

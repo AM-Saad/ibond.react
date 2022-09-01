@@ -21,8 +21,8 @@ function MainContent() {
                     <img className="logo" src={Logo} alt="Loyalty Program" />
                 </div>
 
-                <h2 style={{textAlign:'center'}}>Hi, {user?.first_name}</h2>
-                <h2 style={{textAlign:'center'}}>{t('home.store_is_ready')}</h2>
+                <h2 className='text-center'>Hi, {user?.first_name}</h2>
+                <h2 className='text-center'>{t('home.store_is_ready')}</h2>
                 <div className='actions'>
                     <StyledButton><Link to="/qr">{t('buttons.get_qr')}</Link></StyledButton>
                     <StyledButton><Link to="/settings">{t('buttons.settings')}</Link></StyledButton>

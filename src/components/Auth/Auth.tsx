@@ -17,7 +17,7 @@ interface Response {
 const Auth = () => {
     const [data, setData] = useState<Response>();
     const { error, loading, sendRequest } = useHttp()
-    const { meta, setUserHandler, get_me, login, server_url } = useContext(UserContext)
+    const { meta, login, requiredAuth, server_url } = useContext(UserContext)
     const { t } = useTranslation()
     const isLoading = useMemo(() => meta.loading || loading, [meta, loading])
 
@@ -49,11 +49,11 @@ const Auth = () => {
                 <img className="logo" src={Logo} alt="Loyalty Program" />
             </div>
 
-            <h2>{t('home.setup_your_store')}</h2>
-            <p dangerouslySetInnerHTML={{ __html: t('home.agree_to_terms') }}></p>
+            <h2 className="text-center">{t('home.setup_your_store')}</h2>
+            <p className="text-center" dangerouslySetInnerHTML={{ __html: t('home.agree_to_terms') }}></p>
             <div className="actions">
                 {isLoading && <p className="loading">{t('loading')}</p>}
-
+                {requiredAuth && <p className="loading text-warningr">{t('required_auth')} </p>}
                 {!isLoading &&
                     <>
                         <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
