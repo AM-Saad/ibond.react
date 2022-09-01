@@ -57,7 +57,7 @@ const Auth = () => {
                 {!isLoading &&
                     <>
                         <FacebookLoginComponent onSubmit={success} onFailure={onFailure} />
-                        {/* <Google onSubmit={success} onFailure={onFailure} /> */}
+                        <Google onSubmit={success} onFailure={onFailure} />
                     </>
                 }
                 {!meta.loading && !meta.error && <p className='text-danger'>{meta.error}</p>}
